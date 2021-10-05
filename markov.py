@@ -64,9 +64,14 @@ def make_text(chains):
     words = []
 
     # your code goes here
-    
+
 
     return ' '.join(words)
+# make a new key for the second word out of the first key in our dictionary EX: ('Would', 'You') <- use You.
+# whatever value for that key, pull a random word from the list that follows it.
+# Using the new key, look up the new key in the dictionary and pull a new random word from the new list
+# keep going until KeyError
+# Remember that the last line of text from green-eggs.txt is "Sam I am?"
 
 
 input_path = 'green-eggs.txt'
