@@ -61,11 +61,22 @@ def make_chains(text_string):
 def make_text(chains):
     """Return text from chains."""
 
-    words = []
+    word_picked = choice(chains.keys()) #tuple of two words
+    words = list(word_picked) #makes a list of the tuples
+    
+    while True:
+        new_word = choice(chains[word_picked])
+        words.append(new_word)
+        new_key = (word_picked[1], new_word)
+        
 
     # your code goes here
-
-
+    #for i in range(len(chains)):
+    #    if chains[i] in chains.keys():
+    #        words.append(chains[1])
+        #words.append(chains[1][i])
+        
+        
     return ' '.join(words)
 # make a new key for the second word out of the first key in our dictionary EX: ('Would', 'You') <- use You.
 # whatever value for that key, pull a random word from the list that follows it.
@@ -81,8 +92,8 @@ input_text = open_and_read_file(input_path)
 
 # # Get a Markov chain
 chains = make_chains(input_text)
+# print(make_chains(input_text))
 
 # # Produce random text
 random_text = make_text(chains)
-
-# print(random_text)
+print(random_text)
